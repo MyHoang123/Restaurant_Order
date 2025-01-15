@@ -6,5 +6,7 @@ xem là bao nhiêu thì thay vào 192.186.1.5
 B3 Tại file Restaurant tìm file .env.development cũng sửa lại như file sever theo đúng IP
 Lưu ý: 2 bước này là de anh em có thể quét mã QR trực tiếp trên dt di động của ae và tương tac vs hệ thống
 B3: Import file database mình gửi kèm bên dưới lưu y là tên database là gogi
-B4: Chạy npm start cho 2 file và demo
+B4: Tại file Restaurant chạy lệnh npm i --force tại terminal
+B5: Chạy npm i cho file sever
+B6: Chạy npm start cho cả 2 file
 Nếu trong quy trình cài ae có lỗi gi thì liên hệ mình hỗ trợ
