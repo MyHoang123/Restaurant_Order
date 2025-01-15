@@ -1,0 +1,10 @@
+Hướng chạy code:
+B1: Mở visuacode và import 2 file Restaurant và Restaurant_Sever
+B2: Tại file Restaurant_Sever ae tìm tới file .env ae sửa lại IP_CLIENT sao cho đúng với ip của anh em
+VD ( http://192.168.1.5:3000 ) Ae mở cmd tại máy của ae và nhập lệnh ipconfig để lấy dia chỉ IP tại Link-local IPv6 Address
+xem là bao nhiêu thì thay vào 192.186.1.5
+B3 Tại file Restaurant tìm file .env.development cũng sửa lại như file sever theo đúng IP
+Lưu ý: 2 bước này là de anh em có thể quét mã QR trực tiếp trên dt di động của ae và tương tac vs hệ thống
+B3: Import file database mình gửi kèm bên dưới lưu y là tên database là gogi
+B4: Chạy npm start cho 2 file và demo
+Nếu trong quy trình cài ae có lỗi gi thì liên hệ mình hỗ trợ
