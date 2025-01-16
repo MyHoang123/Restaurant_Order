@@ -397,3 +397,25 @@ exports.showBillOrder = async (req, res) => {
         }
     })
 }
+exports.loginAdmin = async (req, res) => {
+    const {Acc, Pass} = req.body;
+    if (Acc && Pass) { 
+        await Order.loginAdmin(Acc,Pass,(err,user)=>{
+            if(user) {
+                const newUser = {
+                    Id: user.Id
+                }
+                let token = jwt.sign(newUser, process.env.ACCESS_JWT_SECRET);
+                return res.status(200).json({
+                    massege: 'Success',
+                    token: token
+                    })
+            }
+            else {
+                return res.status(200).json({
+                    massege: 'that bai',
+                 })
+            }
+        })
+    }
+}

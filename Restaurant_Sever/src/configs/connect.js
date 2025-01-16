@@ -4,7 +4,7 @@ var conn = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'gogi'
+    database: 'gogi',
 })
 
 conn.connect(function(err, conn) {

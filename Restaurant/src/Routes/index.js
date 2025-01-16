@@ -1,5 +1,6 @@
 
 import AdminLayout from "~/components/Layout/AdminLayout";
+import LoginAdmin from "~/components/Layout/LoginAdmin";
 import Order from "~/components/Layout/MobileLayout";
 import Dashboard from "~/pages/Dashboard";
 import createQr from "~/pages/CreateQR";
@@ -12,6 +13,7 @@ import DetaiProductMobileOrder from "~/pages/DetailProductOrder";
 const publicRoutes = [
     { path: '/showtable', component: showTable, layout: AdminLayout, },
     { path: '/createqr', component: createQr, layout: AdminLayout, },
+    { path: '/admin/login', component: null, layout: LoginAdmin, },
     { path: '/', component: Dashboard, layout: AdminLayout, },
 ]
 const mobileRoutes = [

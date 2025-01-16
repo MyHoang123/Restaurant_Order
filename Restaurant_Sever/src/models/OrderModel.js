@@ -196,7 +196,21 @@ const getBillProductOrderUser = function (Id, callback)  {
        }
     })
 }
+const loginAdmin = async (Acc,Pass,result) => {
+    await db.query(`SELECT Id FROM account WHERE Name=? AND Pass=? AND Access = 1`,[Acc,Pass], function(err, res){
+        if(err) {
+            result (null)
+            return
+        }
+        if(res.length) {
+            result (null,res[0])
+            return
+        }
+        result (null,null)
+    })
+}
 module.exports = {
+    loginAdmin,
     getProductOrderAll,
     getBillOrder,
     fillterProductCate,

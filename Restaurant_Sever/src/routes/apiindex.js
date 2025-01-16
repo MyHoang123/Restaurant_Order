@@ -28,6 +28,7 @@ const apiRoute = (app) => {
   router.get('/avtuser/:user',ImgController.Avt)
   router.post('/createbillorder',checkTokenOrder,OrderController.createBillOrder)
   router.post('/showproductid',ProductController.showProductId)
+  router.post('/loginadmin',OrderController.loginAdmin)
   return ( 
       app.use(cors({
           origin: [process.env.IP_CLIENT, 'http://localhost:3000']

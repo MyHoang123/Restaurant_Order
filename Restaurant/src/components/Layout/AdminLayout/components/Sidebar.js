@@ -1,13 +1,18 @@
 import * as Icon from 'react-feather';
 import { useRef, useState, memo } from 'react';
-import { Link } from 'react-router-dom';
-
+import { Link, useNavigate } from 'react-router-dom';
+import { Cookies } from 'react-cookie';
 
 function Sidebar() {
+    const cookies = new Cookies
+    const navigate = new useNavigate
     const [check, setCheck] = useState(0);
     const sideBar = useRef()
+    const handleClickCheckOut = () => {
+        cookies.remove('AccessTokenAdmin')
+        navigate('/admin/login')
+    }
     return (
-
         <nav ref={sideBar} id="sidebar" className="sidebar js-sidebar"
             style={{
                 overflowY: 'scroll'
@@ -102,8 +107,8 @@ function Sidebar() {
                             <span className="align-middle">Trang khác</span>
                         </Link>
                     </li>
+                    <span onClick={() => handleClickCheckOut()} style={{fontSize: '12px', color: '#fff', cursor:'pointer'}}>Đăng xuất</span>
                 </ul>
-
                 <div className="sidebar-cta">
                     <div className="sidebar-cta-content">
                         <strong className="d-inline-block mb-2">Upgrade to Pro</strong>

@@ -11,8 +11,13 @@ function App() {
                     const Layout = route.layout;
                     const Page = route.component;
                     return <Route key = {index} path = {route.path} element = {
-                    <Layout Children = {<Page />}>
+                    Page !== null ? (
+                      <Layout Children = {<Page />}>
                     </Layout>
+                    ):
+                    (
+                      <Layout />
+                    )
                   } 
                   />
                 })}

@@ -12,7 +12,6 @@ function AdminLayout({ Children }) {
     const navigate = useNavigate()
     const [socketOrder, setSocketOrder] = useState(null)
     const mainRef = useRef()
-    const Loading = useRef()
     const handleAddClass = useCallback(() => {
         if (mainRef.current.classList.length === 1) {
             mainRef.current.classList.add('collapsed');
@@ -37,67 +36,9 @@ function AdminLayout({ Children }) {
             navigate('/admin/login')
         }
     }, [])
-    useEffect(() => {
-        const handleLoad = () => {
-            Loading.current.classList.add('unactive')
-          };
-          window.addEventListener('load', handleLoad);
-          return () => {
-            window.removeEventListener('load', handleLoad);
-          };
-    },[])
     if (cookies.get('AccessTokenAdmin') !== undefined) {
         return (
             <div className='body_admin'>
-                <div ref={Loading} className='load_admin'>
-                    <div className="box-of-star1">
-                        <div className="star star-position1"></div>
-                        <div className="star star-position2"></div>
-                        <div className="star star-position3"></div>
-                        <div className="star star-position4"></div>
-                        <div className="star star-position5"></div>
-                        <div className="star star-position6"></div>
-                        <div className="star star-position7"></div>
-                    </div>
-                    <div className="box-of-star2">
-                        <div className="star star-position1"></div>
-                        <div className="star star-position2"></div>
-                        <div className="star star-position3"></div>
-                        <div className="star star-position4"></div>
-                        <div className="star star-position5"></div>
-                        <div className="star star-position6"></div>
-                        <div className="star star-position7"></div>
-                    </div>
-                    <div className="box-of-star3">
-                        <div className="star star-position1"></div>
-                        <div className="star star-position2"></div>
-                        <div className="star star-position3"></div>
-                        <div className="star star-position4"></div>
-                        <div className="star star-position5"></div>
-                        <div className="star star-position6"></div>
-                        <div className="star star-position7"></div>
-                    </div>
-                    <div className="box-of-star4">
-                        <div className="star star-position1"></div>
-                        <div className="star star-position2"></div>
-                        <div className="star star-position3"></div>
-                        <div className="star star-position4"></div>
-                        <div className="star star-position5"></div>
-                        <div className="star star-position6"></div>
-                        <div className="star star-position7"></div>
-                    </div>
-                    <div data-js="astro" className="astronaut">
-                        <div className="head"></div>
-                        <div className="arm arm-left"></div>
-                        <div className="arm arm-right"></div>
-                        <div className="body">
-                            <div className="panel"></div>
-                        </div>
-                        <div className="leg leg-left"></div>
-                        <div className="leg leg-right"></div>
-                        <div className="schoolbag"></div>
-                    </div>
-                </div>
                 <div className='Sidebar_container'>
                     <Sidebar />
                 </div>
